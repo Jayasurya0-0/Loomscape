@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Experience - Loomscape</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D2691E',
+                        secondary: '#8B4513'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+        
+        .cotton-texture {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><defs><pattern id="cotton" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23f5f5dc" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23cotton)"/></svg>');
+        }
+        
+        .custom-checkbox {
+            appearance: none;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid #D2691E;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .custom-checkbox:checked {
+            background: #D2691E;
+        }
+        
+        .custom-checkbox:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 0.875rem;
+            font-weight: bold;
+        }
+        
+        .custom-radio {
+            appearance: none;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid #D2691E;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .custom-radio:checked {
+            background: #D2691E;
+        }
+        
+        .custom-radio:checked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0.5rem;
+            height: 0.5rem;
+            background: white;
+            border-radius: 50%;
+        }
+        
+        .date-input::-webkit-calendar-picker-indicator {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23D2691E" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>');
+            cursor: pointer;
+        }
+        
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="font-['Crimson_Text'] bg-stone-50">
+    <!-- Header -->
+    <header class="bg-stone-100 shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+					 <img src="Images/Madus_logo-removebg-preview.png"
+                            alt="Logo" class="h-8 mr-3">
+                    <h1 class="font-[''] text-3xl text-primary">Loomscape</h1>
+                   
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" data-readdy="true" class="text-stone-700 hover:text-primary transition-colors duration-300 font-medium">Home</a>
+                     <a href="Booking.html" class="text-stone-700 hover:text-primary transition-colors duration-300 font-medium">Booking</a>
+                    <a href="index.html" class="text-stone-700 hover:text-primary transition-colors duration-300 font-medium">About</a>
+                   <a href="index.html" class="text-stone-700 hover:text-primary transition-colors duration-300 font-medium">Contact</a>
+                    <a href="signin.html" class="text-stone-700 hover:text-primary transition-colors duration-300 font-medium">SignIn</a>
+                </nav>
+                <button class="md:hidden w-8 h-8 flex items-center justify-center">
+                    <i class="ri-menu-line text-xl text-stone-700"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center space-x-2 text-sm">
+                <a href="index.html" data-readdy="true" class="text-stone-600 hover:text-primary transition-colors">Home</a>
+                <i class="ri-arrow-right-s-line text-stone-400"></i>
+                <span class="text-primary font-medium">Book Your Experience</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Title -->
+    <section class="py-12 bg-gradient-to-r from-primary/5 to-secondary/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-stone-800 mb-4">Book Your Experience</h1>
+            <p class="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
+                Choose your journey into Tamil weaving heritage. Select from our immersive experiences and let us craft an unforgettable cultural adventure for you.
+            </p>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-12">
+                <!-- Main Booking Form -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- Experience Selection -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-stone-800 mb-6">Choose Your Experience</h3>
+                        <div class="space-y-6">
+                            <div class="border border-stone-200 rounded-lg p-6 hover:border-primary transition-colors cursor-pointer experience-card">
+                                <div class="flex items-start space-x-4">
+                                    <input type="radio" name="experience" value="meet-weavers" class="custom-radio mt-1" id="meet-weavers">
+                                    <div class="flex-1">
+                                        <label for="meet-weavers" class="cursor-pointer">
+                                            <div class="flex items-center justify-between mb-3">
+                                                <h4 class="font-['Playfair_Display'] text-xl font-semibold text-stone-800">Meet the Weavers</h4>
+                                                <span class="text-primary font-semibold text-lg">₹2,500</span>
+                                            </div>
+                                            <p class="text-stone-600 mb-3">Intimate sessions with master artisans, learning their stories and witnessing traditional techniques passed down through generations.</p>
+                                            <div class="flex items-center space-x-4 text-sm text-stone-500">
+                                                <span class="flex items-center"><i class="ri-time-line w-4 h-4 flex items-center justify-center mr-1"></i>3 hours</span>
+                                                <span class="flex items-center"><i class="ri-group-line w-4 h-4 flex items-center justify-center mr-1"></i>Max 8 people</span>
+                                                <span class="flex items-center"><i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-1"></i>Daily 10 AM - 4 PM</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border border-stone-200 rounded-lg p-6 hover:border-primary transition-colors cursor-pointer experience-card">
+                                <div class="flex items-start space-x-4">
+                                    <input type="radio" name="experience" value="temple-tours" class="custom-radio mt-1" id="temple-tours">
+                                    <div class="flex-1">
+                                        <label for="temple-tours" class="cursor-pointer">
+                                            <div class="flex items-center justify-between mb-3">
+                                                <h4 class="font-['Playfair_Display'] text-xl font-semibold text-stone-800">Temple & Textile Tours</h4>
+                                                <span class="text-primary font-semibold text-lg">₹3,200</span>
+                                            </div>
+                                            <p class="text-stone-600 mb-3">Explore the sacred connection between temple architecture and textile patterns, visiting Meenakshi Temple and traditional workshops.</p>
+                                            <div class="flex items-center space-x-4 text-sm text-stone-500">
+                                                <span class="flex items-center"><i class="ri-time-line w-4 h-4 flex items-center justify-center mr-1"></i>5 hours</span>
+                                                <span class="flex items-center"><i class="ri-group-line w-4 h-4 flex items-center justify-center mr-1"></i>Max 12 people</span>
+                                                <span class="flex items-center"><i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-1"></i>Tue-Sun 9 AM - 3 PM</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border border-stone-200 rounded-lg p-6 hover:border-primary transition-colors cursor-pointer experience-card">
+                                <div class="flex items-start space-x-4">
+                                    <input type="radio" name="experience" value="workshops" class="custom-radio mt-1" id="workshops">
+                                    <div class="flex-1">
+                                        <label for="workshops" class="cursor-pointer">
+                                            <div class="flex items-center justify-between mb-3">
+                                                <h4 class="font-['Playfair_Display'] text-xl font-semibold text-stone-800">Hands-on Workshops</h4>
+                                                <span class="text-primary font-semibold text-lg">₹4,800</span>
+                                            </div>
+                                            <p class="text-stone-600 mb-3">Create your own textile piece under expert guidance, learning traditional weaving techniques and taking home your handcrafted creation.</p>
+                                            <div class="flex items-center space-x-4 text-sm text-stone-500">
+                                                <span class="flex items-center"><i class="ri-time-line w-4 h-4 flex items-center justify-center mr-1"></i>6 hours</span>
+                                                <span class="flex items-center"><i class="ri-group-line w-4 h-4 flex items-center justify-center mr-1"></i>Max 6 people</span>
+                                                <span class="flex items-center"><i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-1"></i>Wed-Sun 10 AM - 5 PM</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Date and Group Selection -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-stone-800 mb-6">Select Date & Group Size</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-2">Preferred Date</label>
+                                <div class="relative">
+                                    <input type="date" class="date-input w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-sm" id="visit-date">
+                                </div>
+                                <p class="text-xs text-stone-500 mt-1">Select your preferred visit date</p>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-2">Alternative Date (Optional)</label>
+                                <div class="relative">
+                                    <input type="date" class="date-input w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-sm" id="alt-date">
+                                </div>
+                                <p class="text-xs text-stone-500 mt-1">Backup date in case preferred date is unavailable</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-3 gap-6 mt-6">
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-2">Adults</label>
+                                <div class="flex items-center border border-stone-300 rounded-lg">
+                                    <button type="button" class="px-3 py-3 text-stone-600 hover:text-primary" onclick="changeQuantity('adults', -1)">
+                                        <i class="ri-subtract-line w-4 h-4 flex items-center justify-center"></i>
+                                    </button>
+                                    <input type="number" id="adults" value="2" min="1" max="20" class="flex-1 text-center py-3 border-none focus:ring-0 text-sm">
+                                    <button type="button" class="px-3 py-3 text-stone-600 hover:text-primary" onclick="changeQuantity('adults', 1)">
+                                        <i class="ri-add-line w-4 h-4 flex items-center justify-center"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-2">Children (5-12 years)</label>
+                                <div class="flex items-center border border-stone-300 rounded-lg">
+                                    <button type="button" class="px-3 py-3 text-stone-600 hover:text-primary" onclick="changeQuantity('children', -1)">
+                                        <i class="ri-subtract-line w-4 h-4 flex items-center justify-center"></i>
+                                    </button>
+                                    <input type="number" id="children" value="0" min="0" max="10" class="flex-1 text-center py-3 border-none focus:ring-0 text-sm">
+                                    <button type="button" class="px-3 py-3 text-stone-600 hover:text-primary" onclick="changeQuantity('children', 1)">
+                                        <i class="ri-add-line w-4 h-4 flex items-center justify-center"></i>
+                                    </button>
+                                </div>
+                                <p class="text-xs text-stone-500 mt-1">50% discount for children</p>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-2">Total Participants</label>
+                                <div class="px-4 py-3 bg-stone-50 border border-stone-200 rounded-lg text-center">
+                                    <span id="total-participants" class="text-lg font-semibold text-stone-800">2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-stone-800 mb-6">Contact Information</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-2">Full Name *</label>
+                                <input type="text" class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your full name" required>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-2">Email Address *</label>
+                                <input type="email" class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="your.email@example.com" required>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-2">Phone Number *</label>
+                                <div class="flex">
+                                    <select class="px-3 py-3 border border-stone-300 rounded-l-lg focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-white">
+                                        <option value="+91">+91</option>
+                                        <option value="+1">+1</option>
+                                        <option value="+44">+44</option>
+                                        <option value="+61">+61</option>
+                                    </select>
+                                    <input type="tel" class="flex-1 px-4 py-3 border border-l-0 border-stone-300 rounded-r-lg focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="9876543210" required>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-2">Alternative Contact</label>
+                                <input type="tel" class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Alternative phone number">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Special Requirements -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-stone-800 mb-6">Special Requirements & Preferences</h3>
+                        
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-stone-700 mb-2">Special Requests</label>
+                            <textarea class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-sm" rows="4" placeholder="Please share any dietary restrictions, accessibility needs, special occasions, or other requirements..."></textarea>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-3">Language Preference</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="language" value="english" class="custom-radio mr-3" checked>
+                                        <span class="text-sm text-stone-700">English</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="language" value="tamil" class="custom-radio mr-3">
+                                        <span class="text-sm text-stone-700">Tamil</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="language" value="hindi" class="custom-radio mr-3">
+                                        <span class="text-sm text-stone-700">Hindi</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-3">Additional Services</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="custom-checkbox mr-3">
+                                        <span class="text-sm text-stone-700">Photography permissions</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="custom-checkbox mr-3">
+                                        <span class="text-sm text-stone-700">Transportation assistance</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="custom-checkbox mr-3">
+                                        <span class="text-sm text-stone-700">Accommodation recommendations</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="custom-checkbox mr-3">
+                                        <span class="text-sm text-stone-700">Traditional lunch included (+₹800)</span>
+                                    </label>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Summary Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white p-6 rounded-lg shadow-lg sticky top-24">
+                        <h3 class="font-['Playfair_Display'] text-xl font-semibold text-stone-800 mb-6">Booking Summary</h3>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div id="selected-experience" class="p-4 bg-stone-50 rounded-lg hidden">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="font-medium text-stone-800" id="experience-name">Select an experience</h4>
+                                    <span class="text-primary font-semibold" id="experience-price">₹0</span>
+                                </div>
+                                <p class="text-sm text-stone-600" id="experience-details"></p>
+                            </div>
+                            
+                            <div class="border-t border-stone-200 pt-4">
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span class="text-stone-600">Adults (<span id="summary-adults">2</span>)</span>
+                                    <span id="adults-cost">₹0</span>
+                                </div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span class="text-stone-600">Children (<span id="summary-children">0</span>)</span>
+                                    <span id="children-cost">₹0</span>
+                                </div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span class="text-stone-600">Additional Services</span>
+                                    <span id="services-cost">₹0</span>
+                                </div>
+                            </div>
+                            
+                            <div class="border-t border-stone-200 pt-4">
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span class="text-stone-600">Subtotal</span>
+                                    <span id="subtotal">₹0</span>
+                                </div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span class="text-stone-600">GST (18%)</span>
+                                    <span id="gst">₹0</span>
+                                </div>
+                                <div class="flex justify-between text-lg font-semibold text-stone-800 pt-2 border-t border-stone-200">
+                                    <span>Total Amount</span>
+                                    <span class="text-primary" id="total-amount">₹0</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-3 px-4 !rounded-button font-medium transition-all duration-300 whitespace-nowrap">
+                                Confirm Booking
+                            </button>
+                            <button class="w-full bg-stone-100 hover:bg-stone-200 text-stone-700 py-3 px-4 !rounded-button font-medium transition-all duration-300 whitespace-nowrap">
+                                Save as Draft
+                            </button>
+                        </div>
+                        
+                        <div class="mt-6 text-xs text-stone-500 space-y-2">
+                            <p class="flex items-center">
+                                <i class="ri-shield-check-line w-4 h-4 flex items-center justify-center mr-2 text-green-600"></i>
+                                Secure payment processing
+                            </p>
+                            <p class="flex items-center">
+                                <i class="ri-calendar-check-line w-4 h-4 flex items-center justify-center mr-2 text-blue-600"></i>
+                                Free cancellation up to 24 hours
+                            </p>
+                            <p class="flex items-center">
+                                <i class="ri-customer-service-line w-4 h-4 flex items-center justify-center mr-2 text-primary"></i>
+                                24/7 booking support
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Expect -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="font-['Playfair_Display'] text-3xl font-bold text-stone-800 mb-4">What to Expect</h3>
+                <p class="text-lg text-stone-600">Prepare for your immersive cultural journey</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-map-pin-line text-primary text-2xl"></i>
+                    </div>
+                    <h4 class="font-['Playfair_Display'] text-xl font-semibold text-stone-800 mb-3">Meeting Point</h4>
+                    <p class="text-stone-600">We'll meet at the Traditional Weaving Quarter, near Meenakshi Temple. Detailed directions will be sent with your confirmation.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-t-shirt-line text-primary text-2xl"></i>
+                    </div>
+                    <h4 class="font-['Playfair_Display'] text-xl font-semibold text-stone-800 mb-3">What to Wear</h4>
+                    <p class="text-stone-600">Comfortable clothing and closed-toe shoes recommended. Traditional attire is welcome but not required.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-camera-line text-primary text-2xl"></i>
+                    </div>
+                    <h4 class="font-['Playfair_Display'] text-xl font-semibold text-stone-800 mb-3">Photography</h4>
+                    <p class="text-stone-600">Photography is encouraged! We'll help you capture beautiful moments with the artisans and your creations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-800 text-stone-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <img src="Images/Madus_logo-removebg-preview.png"
+                            alt="Logo" class="h-8 mr-3">
+                    <h1 class="font-[''] text-3xl text-primary">Loomscape</h1>
+                    <p class="text-stone-400 mb-6 leading-relaxed">
+                        Connecting souls to the timeless art of Tamil handloom weaving in the cultural heart of Madurai. Where tradition meets transformation.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-stone-700 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="ri-facebook-fill text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-stone-700 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="ri-instagram-line text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-stone-700 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="ri-youtube-line text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold text-stone-100 mb-4">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" data-readdy="true" class="hover:text-primary transition-colors duration-300">Home</a></li>
+                         <li><a href="Booking.html" class="hover:text-primary transition-colors duration-300">Booking</a></li>
+                        <li><a href="#about" class="hover:text-primary transition-colors duration-300">About</a></li>
+                       
+                        <li><a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a></li>
+                        <li><a href="signin.html" class="hover:text-primary transition-colors duration-300">SignIn</a></li>
+                        
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold text-stone-100 mb-4">Visit Us</h5>
+                    <div class="space-y-2">
+                        <p class="text-sm">Traditional Weaving Quarter</p>
+                        <p class="text-sm">Near Meenakshi Temple</p>
+                        <p class="text-sm">Madurai, Tamil Nadu 625001</p>
+                        <p class="text-sm">India</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-stone-700 mt-12 pt-8 text-center">
+                <p class="text-stone-400 text-sm">
+                    © 2024 Loomscape. All rights reserved. | Threads of Tradition, Woven in Madurai
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script id="experience-selection">
+        document.addEventListener('DOMContentLoaded', function() {
+            const experienceCards = document.querySelectorAll('.experience-card');
+            const experienceRadios = document.querySelectorAll('input[name="experience"]');
+            
+            experienceCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const radio = this.querySelector('input[type="radio"]');
+                    radio.checked = true;
+                    updatePricing();
+                    updateExperienceDisplay();
+                });
+            });
+            
+            experienceRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    updatePricing();
+                    updateExperienceDisplay();
+                });
+            });
+            
+            function updateExperienceDisplay() {
+                const selectedExperience = document.querySelector('input[name="experience"]:checked');
+                const summaryDiv = document.getElementById('selected-experience');
+                
+                if (selectedExperience) {
+                    const card = selectedExperience.closest('.experience-card');
+                    const title = card.querySelector('h4').textContent;
+                    const price = card.querySelector('.text-primary').textContent;
+                    const description = card.querySelector('p').textContent;
+                    
+                    document.getElementById('experience-name').textContent = title;
+                    document.getElementById('experience-price').textContent = price;
+                    document.getElementById('experience-details').textContent = description.substring(0, 80) + '...';
+                    
+                    summaryDiv.classList.remove('hidden');
+                } else {
+                    summaryDiv.classList.add('hidden');
+                }
+            }
+        });
+    </script>
+
+    <script id="quantity-controls">
+        function changeQuantity(type, delta) {
+            const input = document.getElementById(type);
+            const currentValue = parseInt(input.value);
+            const newValue = Math.max(type === 'adults' ? 1 : 0, currentValue + delta);
+            const maxValue = type === 'adults' ? 20 : 10;
+            
+            if (newValue <= maxValue) {
+                input.value = newValue;
+                updateTotalParticipants();
+                updatePricing();
+            }
+        }
+        
+        function updateTotalParticipants() {
+            const adults = parseInt(document.getElementById('adults').value);
+            const children = parseInt(document.getElementById('children').value);
+            const total = adults + children;
+            
+            document.getElementById('total-participants').textContent = total;
+            document.getElementById('summary-adults').textContent = adults;
+            document.getElementById('summary-children').textContent = children;
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const adultsInput = document.getElementById('adults');
+            const childrenInput = document.getElementById('children');
+            
+            adultsInput.addEventListener('input', function() {
+                updateTotalParticipants();
+                updatePricing();
+            });
+            
+            childrenInput.addEventListener('input', function() {
+                updateTotalParticipants();
+                updatePricing();
+            });
+            
+            updateTotalParticipants();
+        });
+    </script>
+
+    <script id="pricing-calculator">
+        function updatePricing() {
+            const selectedExperience = document.querySelector('input[name="experience"]:checked');
+            const adults = parseInt(document.getElementById('adults').value);
+            const children = parseInt(document.getElementById('children').value);
+            const lunchCheckbox = document.querySelector('input[type="checkbox"]:checked');
+            
+            let basePrice = 0;
+            if (selectedExperience) {
+                switch(selectedExperience.value) {
+                    case 'meet-weavers':
+                        basePrice = 2500;
+                        break;
+                    case 'temple-tours':
+                        basePrice = 3200;
+                        break;
+                    case 'workshops':
+                        basePrice = 4800;
+                        break;
+                }
+            }
+            
+            const adultsCost = adults * basePrice;
+            const childrenCost = children * (basePrice * 0.5);
+            const servicesCost = document.querySelector('input[type="checkbox"]:checked') ? 800 : 0;
+            
+            const subtotal = adultsCost + childrenCost + servicesCost;
+            const gst = subtotal * 0.18;
+            const total = subtotal + gst;
+            
+            document.getElementById('adults-cost').textContent = `₹${adultsCost.toLocaleString()}`;
+            document.getElementById('children-cost').textContent = `₹${childrenCost.toLocaleString()}`;
+            document.getElementById('services-cost').textContent = `₹${servicesCost.toLocaleString()}`;
+            document.getElementById('subtotal').textContent = `₹${subtotal.toLocaleString()}`;
+            document.getElementById('gst').textContent = `₹${Math.round(gst).toLocaleString()}`;
+            document.getElementById('total-amount').textContent = `₹${Math.round(total).toLocaleString()}`;
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updatePricing);
+            });
+            
+            updatePricing();
+        });
+    </script>
+
+    <script id="form-validation">
+        document.addEventListener('DOMContentLoaded', function() {
+            const confirmButton = document.querySelector('button:contains("Confirm Booking")');
+            const form = document.querySelector('form') || document.body;
+            
+            if (confirmButton) {
+                confirmButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const requiredFields = document.querySelectorAll('input[required]');
+                    const selectedExperience = document.querySelector('input[name="experience"]:checked');
+                    const visitDate = document.getElementById('visit-date').value;
+                    
+                    let isValid = true;
+                    let errorMessage = '';
+                    
+                    if (!selectedExperience) {
+                        isValid = false;
+                        errorMessage = 'Please select an experience.';
+                    }
+                    
+                    if (!visitDate) {
+                        isValid = false;
+                        errorMessage = 'Please select a visit date.';
+                    }
+                    
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            isValid = false;
+                            field.classList.add('border-red-500');
+                            if (!errorMessage) errorMessage = 'Please fill in all required fields.';
+                        } else {
+                            field.classList.remove('border-red-500');
+                        }
+                    });
+                    
+                    if (isValid) {
+                        alert('Booking confirmed! You will receive a confirmation email shortly.');
+                    } else {
+                        alert(errorMessage);
+                    }
+                });
+            }
+        });
+    </script>
+
+  	<!-- body code goes here -->
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-3.4.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/popper.min.js"></script> 
+	<script src="js/bootstrap-4.4.1.js"></script>
+  </body>
+</html>

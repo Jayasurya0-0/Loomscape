@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loomscape - Threads of Tradition, Woven in Madurai</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D2691E',
+                        secondary: '#8B4513'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        .hero-bg {
+            background-image: url('https://readdy.ai/api/search-image?query=Traditional%20Indian%20handloom%20weaving%20with%20skilled%20artisan%20hands%20working%20on%20wooden%20loom%2C%20warm%20golden%20sunlight%20filtering%20through%20window%2C%20cotton%20threads%20in%20natural%20beige%20and%20terracotta%20colors%2C%20authentic%20Tamil%20Nadu%20textile%20workshop%2C%20soft%20natural%20lighting%2C%20artisanal%20craftsmanship%2C%20peaceful%20atmosphere%2C%20left%20side%20has%20soft%20warm%20beige%20background%20perfect%20for%20text%20overlay%2C%20right%20side%20shows%20detailed%20weaving%20process&width=1920&height=800&seq=hero-loom-1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cotton-texture {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><defs><pattern id="cotton" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23f5f5dc" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23cotton)"/></svg>');
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+
+        .tamil-border {
+            border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20" viewBox="0 0 100 20"><path d="M0,10 Q25,0 50,10 T100,10" stroke="%23D2691E" stroke-width="2" fill="none"/></svg>') 1;
+        }
+    </style>
+</head>
+
+<body class="font-['Crimson_Text'] bg-stone-50">
+    <!-- Header -->
+    <header class="bg-stone-100 shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+					 <img src="Images/Madus_logo-removebg-preview.png"
+                            alt="Logo" class="h-8 mr-3">
+                    <h1 class="font-[''] text-3xl text-primary">Loomscape</h1>
+                    
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html"
+                        class="text-stone-700 hover:text-primary transition-colors duration-300 font-medium">Home</a>
+                        <a href="Booking.html"
+                        class="text-stone-700 hover:text-primary transition-colors duration-300 font-medium">Booking</a>
+                    <a href="#about"
+                        class="text-stone-700 hover:text-primary transition-colors duration-300 font-medium">About</a>
+                    <a href="#contact"
+                        class="text-stone-700 hover:text-primary transition-colors duration-300 font-medium">Contact</a>
+                          <a href="signin.html"
+                        class="text-stone-700 hover:text-primary transition-colors duration-300 font-medium">Signin</a>
+                </nav>
+                <button class="md:hidden w-8 h-8 flex items-center justify-center">
+                    <i class="ri-menu-line text-xl text-stone-700"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-stone-50/90 via-stone-50/60 to-transparent"></div>
+        <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl">
+                <h2 class="font-['Playfair_Display'] text-5xl md:text-6xl font-bold text-stone-800 leading-tight mb-6">
+                    Where Ancient Threads Meet Modern Souls
+                </h2>
+                <p class="text-xl text-stone-700 mb-8 leading-relaxed">
+                    Immerse yourself in the timeless art of Tamil handloom weaving. Feel the rhythm of the loom, hear
+                    the stories of master artisans, and discover the sacred connection between craft and culture in the
+                    heart of Madurai.
+                </p>
+                <button
+                    class="bg-primary hover:bg-secondary text-white px-8 py-4 !rounded-button font-medium text-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap">
+                    Begin Your Journey
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Experience Preview Cards -->
+    <section id="experience" class="py-20 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="font-['Playfair_Display'] text-4xl font-bold text-stone-800 mb-4">Weave Your Story</h3>
+                <p class="text-lg text-stone-600 max-w-2xl mx-auto">Three immersive experiences that connect you to the
+                    soul of Tamil textile heritage</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="cotton-texture bg-stone-100 p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="mb-6">
+                        <img src="https://readdy.ai/api/search-image?query=Elderly%20Tamil%20master%20weaver%20with%20weathered%20hands%20working%20on%20traditional%20handloom%2C%20warm%20natural%20lighting%2C%20focused%20expression%2C%20cotton%20threads%2C%20authentic%20workshop%20setting%2C%20cultural%20portrait%20photography%2C%20earthy%20tones%2C%20artisanal%20craftsmanship&width=400&height=300&seq=weaver-1&orientation=landscape"
+                            alt="Master Weaver" class="w-full h-48 object-cover object-top rounded-lg">
+                    </div>
+                    <h4 class="font-['Playfair_Display'] text-2xl font-semibold text-stone-800 mb-4">Meet the Weavers
+                    </h4>
+                    <p class="text-stone-600 leading-relaxed">
+                        Sit beside master artisans whose families have woven stories for generations. Listen to their
+                        tales while cotton transforms into art beneath their skilled fingers.
+                    </p>
+                </div>
+                <div
+                    class="cotton-texture bg-stone-100 p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="mb-6">
+                        <img src="https://readdy.ai/api/search-image?query=Meenakshi%20Temple%20Madurai%20with%20traditional%20Tamil%20architecture%2C%20golden%20hour%20lighting%2C%20ancient%20stone%20pillars%20and%20colorful%20gopuram%2C%20spiritual%20atmosphere%2C%20cultural%20heritage%20site%2C%20warm%20temple%20lighting%2C%20devotees%20in%20traditional%20clothing&width=400&height=300&seq=temple-1&orientation=landscape"
+                            alt="Temple Tours" class="w-full h-48 object-cover object-top rounded-lg">
+                    </div>
+                    <h4 class="font-['Playfair_Display'] text-2xl font-semibold text-stone-800 mb-4">Temple & Textile
+                        Tours</h4>
+                    <p class="text-stone-600 leading-relaxed">
+                        Discover how sacred geometry influences textile patterns. Walk through ancient temples where
+                        art, spirituality, and craft converge in perfect harmony.
+                    </p>
+                </div>
+                <div
+                    class="cotton-texture bg-stone-100 p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="mb-6">
+                        <img src="https://readdy.ai/api/search-image?query=Hands-on%20textile%20workshop%20with%20participants%20learning%20traditional%20weaving%20techniques%2C%20colorful%20cotton%20threads%2C%20wooden%20looms%2C%20collaborative%20learning%20environment%2C%20cultural%20exchange%2C%20warm%20natural%20lighting%2C%20artisan%20guidance&width=400&height=300&seq=workshop-1&orientation=landscape"
+                            alt="Workshops" class="w-full h-48 object-cover object-top rounded-lg">
+                    </div>
+                    <h4 class="font-['Playfair_Display'] text-2xl font-semibold text-stone-800 mb-4">Hands-on Workshops
+                    </h4>
+                    <p class="text-stone-600 leading-relaxed">
+                        Feel the meditation of weaving as your own hands guide threads into patterns. Create a piece
+                        that carries your story back home with you.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Heritage Story Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://readdy.ai/api/search-image?query=Meenakshi%20Temple%20Madurai%20majestic%20gopuram%20towers%20with%20intricate%20stone%20carvings%2C%20golden%20hour%20warm%20lighting%2C%20ancient%20Tamil%20architecture%2C%20spiritual%20atmosphere%2C%20cultural%20heritage%20monument%2C%20detailed%20sculptural%20work%2C%20traditional%20South%20Indian%20temple%20design&width=600&height=700&seq=temple-heritage-1&orientation=portrait"
+                        alt="Meenakshi Temple"
+                        class="w-full h-96 lg:h-full object-cover object-top rounded-lg shadow-lg">
+                </div>
+                <div class="space-y-6">
+                    <h3 class="font-['Playfair_Display'] text-4xl font-bold text-stone-800">The Sacred Art of Tamil
+                        Weaving</h3>
+                    <p class="text-lg text-stone-600 leading-relaxed">
+                        In the shadow of Meenakshi Temple's towering gopurams, where incense mingles with cotton dust,
+                        lies a tradition older than memory itself. Here, in Madurai's narrow lanes, the rhythm of the
+                        handloom echoes the heartbeat of Tamil culture.
+                    </p>
+                    <p class="text-lg text-stone-600 leading-relaxed">
+                        Each thread tells a story—of monsoons that blessed the cotton fields, of hands that learned
+                        their craft from mothers and grandmothers, of patterns that mirror the sacred geometry found in
+                        temple walls. This is not merely textile production; this is cultural DNA woven into fabric.
+                    </p>
+                    <p class="text-lg text-stone-600 leading-relaxed">
+                        Loomscape invites you to step into this living heritage, to feel the weight of tradition in your
+                        hands, and to understand how art, spirituality, and daily life interweave in the Tamil way of
+                        being.
+                    </p>
+                    <button
+                        class="bg-secondary hover:bg-primary text-white px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap">
+                        Discover Our Heritage
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Artisan Spotlight -->
+    <section class="py-20 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="font-['Playfair_Display'] text-4xl font-bold text-stone-800 mb-4">Voices of the Loom</h3>
+                <p class="text-lg text-stone-600">Meet the master artisans who keep Tamil weaving traditions alive</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="flex items-start space-x-6">
+                        <img src="https://readdy.ai/api/search-image?query=Portrait%20of%20elderly%20Tamil%20master%20weaver%20woman%20with%20kind%20eyes%20and%20weathered%20hands%2C%20traditional%20clothing%2C%20warm%20natural%20lighting%2C%20cultural%20portrait%20photography%2C%20authentic%20expression%2C%20wisdom%20in%20face%2C%20artisan%20craftsperson&width=150&height=150&seq=artisan-1&orientation=squarish"
+                            alt="Master Weaver Kamala" class="w-24 h-24 rounded-full object-cover object-top">
+                        <div class="flex-1">
+                            <h4 class="font-['Playfair_Display'] text-xl font-semibold text-stone-800 mb-2">Kamala Devi
+                            </h4>
+                            <p class="text-sm text-primary mb-4">Master Weaver, 40 years experience</p>
+                            <blockquote class="text-stone-600 italic leading-relaxed">
+                                "When I sit at the loom, I feel my grandmother's hands guiding mine. Each pattern
+                                carries the prayers of generations. This is how we keep our ancestors alive—through
+                                every thread we weave."
+                            </blockquote>
+                            <p class="text-sm text-stone-500 mt-3 font-['Tamil']">நெசவு என்பது வெறும் தொழில் அல்ல, அது
+                                நமது கலாச்சாரம்</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="flex items-start space-x-6">
+                        <img src="https://readdy.ai/api/search-image?query=Portrait%20of%20middle-aged%20Tamil%20master%20weaver%20man%20with%20skilled%20hands%20and%20focused%20expression%2C%20traditional%20white%20dhoti%2C%20warm%20natural%20lighting%2C%20cultural%20portrait%20photography%2C%20authentic%20craftsman%2C%20artisan%20pride&width=150&height=150&seq=artisan-2&orientation=squarish"
+                            alt="Master Weaver Raman" class="w-24 h-24 rounded-full object-cover object-top">
+                        <div class="flex-1">
+                            <h4 class="font-['Playfair_Display'] text-xl font-semibold text-stone-800 mb-2">Raman
+                                Krishnan</h4>
+                            <p class="text-sm text-primary mb-4">Heritage Textile Designer, 35 years experience</p>
+                            <blockquote class="text-stone-600 italic leading-relaxed">
+                                "Every morning, I touch the temple wall before I begin weaving. The same patterns that
+                                adorn Meenakshi Amman flow through my loom. We are not just making cloth—we are weaving
+                                devotion."
+                            </blockquote>
+                            <p class="text-sm text-stone-500 mt-3 font-['Tamil']">கோயில் கலையும் நெசவு கலையும் ஒன்றே</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Visual Gallery Grid -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="font-['Playfair_Display'] text-4xl font-bold text-stone-800 mb-4">The Poetry of Process</h3>
+                <p class="text-lg text-stone-600">Witness the beauty in every stage of creation</p>
+            </div>
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-6">
+                <div class="masonry-item group cursor-pointer">
+                    <img src="https://readdy.ai/api/search-image?query=Close-up%20macro%20photography%20of%20colorful%20cotton%20threads%20on%20traditional%20wooden%20loom%2C%20intricate%20weaving%20pattern%2C%20warm%20natural%20lighting%2C%20textile%20artistry%2C%20detailed%20craftsmanship%2C%20earthy%20tones%20with%20vibrant%20accents&width=400&height=500&seq=gallery-1&orientation=portrait"
+                        alt="Threads on Loom"
+                        class="w-full rounded-lg shadow-md group-hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="p-4 bg-stone-50 rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-sm text-stone-600 italic">"In the dance of warp and weft, stories are born"</p>
+                    </div>
+                </div>
+                <div class="masonry-item group cursor-pointer">
+                    <img src="https://readdy.ai/api/search-image?query=Skilled%20artisan%20hands%20working%20with%20cotton%20threads%2C%20close-up%20detail%20of%20weaving%20process%2C%20warm%20golden%20lighting%2C%20traditional%20handloom%20textile%20creation%2C%20authentic%20craftsmanship%2C%20cultural%20heritage%20work&width=400&height=300&seq=gallery-2&orientation=landscape"
+                        alt="Artisan Hands"
+                        class="w-full rounded-lg shadow-md group-hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="p-4 bg-stone-50 rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-sm text-stone-600 italic">"Hands that hold centuries of wisdom"</p>
+                    </div>
+                </div>
+                <div class="masonry-item group cursor-pointer">
+                    <img src="https://readdy.ai/api/search-image?query=Beautiful%20finished%20Tamil%20handloom%20textile%20with%20traditional%20patterns%20and%20natural%20cotton%20colors%2C%20folded%20fabric%20showing%20texture%20and%20weave%20quality%2C%20artisanal%20product%20photography%2C%20cultural%20textile%20art&width=400&height=600&seq=gallery-3&orientation=portrait"
+                        alt="Finished Textile"
+                        class="w-full rounded-lg shadow-md group-hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="p-4 bg-stone-50 rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-sm text-stone-600 italic">"Where tradition takes tangible form"</p>
+                    </div>
+                </div>
+                <div class="masonry-item group cursor-pointer">
+                    <img src="https://readdy.ai/api/search-image?query=Traditional%20wooden%20handloom%20in%20Tamil%20Nadu%20workshop%2C%20warm%20natural%20lighting%20filtering%20through%20windows%2C%20authentic%20weaving%20equipment%2C%20cultural%20heritage%20tools%2C%20artisanal%20workspace%20atmosphere&width=400&height=400&seq=gallery-4&orientation=squarish"
+                        alt="Traditional Loom"
+                        class="w-full rounded-lg shadow-md group-hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="p-4 bg-stone-50 rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-sm text-stone-600 italic">"The sacred instrument of creation"</p>
+                    </div>
+                </div>
+                <div class="masonry-item group cursor-pointer">
+                    <img src="https://readdy.ai/api/search-image?query=Cultural%20moment%20of%20Tamil%20weaver%20teaching%20traditional%20techniques%2C%20intergenerational%20knowledge%20transfer%2C%20warm%20community%20atmosphere%2C%20authentic%20cultural%20exchange%2C%20heritage%20preservation%20in%20action&width=400&height=350&seq=gallery-5&orientation=landscape"
+                        alt="Cultural Moment"
+                        class="w-full rounded-lg shadow-md group-hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="p-4 bg-stone-50 rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-sm text-stone-600 italic">"Knowledge flowing like silk between generations"</p>
+                    </div>
+                </div>
+                <div class="masonry-item group cursor-pointer">
+                    <img src="https://readdy.ai/api/search-image?query=Detailed%20macro%20shot%20of%20intricate%20Tamil%20textile%20pattern%20inspired%20by%20temple%20architecture%2C%20geometric%20designs%2C%20natural%20cotton%20texture%2C%20traditional%20motifs%2C%20cultural%20artistry%20in%20fabric&width=400&height=450&seq=gallery-6&orientation=portrait"
+                        alt="Textile Pattern"
+                        class="w-full rounded-lg shadow-md group-hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="p-4 bg-stone-50 rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-sm text-stone-600 italic">"Sacred geometry made manifest in thread"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Call-to-Action Section -->
+    <section class="py-20 bg-gradient-to-r from-primary/10 to-secondary/10 relative overflow-hidden">
+        <div class="absolute inset-0 cotton-texture opacity-30"></div>
+        <div class="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h3 class="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-stone-800 mb-6">
+                Weave Your Story with Us
+            </h3>
+            <p class="text-xl text-stone-600 mb-8 leading-relaxed max-w-2xl mx-auto">
+                Join us in Madurai, where every thread connects you to the timeless rhythm of Tamil culture. Your
+                journey into authentic heritage begins with a single step.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="Booking.html"
+                    data-readdy="true">
+                    <button
+                        class="bg-primary hover:bg-secondary text-white px-8 py-4 !rounded-button font-medium text-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap">
+                        Book Your Experience
+                    </button>
+                </a>
+                <button
+                    class="bg-white hover:bg-stone-50 text-stone-800 border-2 border-stone-300 px-8 py-4 !rounded-button font-medium text-lg transition-all duration-300 whitespace-nowrap">
+                    Learn More
+                </button>
+            </div>
+            <div class="mt-12 grid md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-phone-line text-primary text-xl"></i>
+                    </div>
+                    <p class="text-stone-600">+91 98765 43210</p>
+                </div>
+                <div>
+                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-mail-line text-primary text-xl"></i>
+                    </div>
+                    <p class="text-stone-600">hello@loomscape.in</p>
+                </div>
+                <div>
+                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-map-pin-line text-primary text-xl"></i>
+                    </div>
+                    <p class="text-stone-600">Madurai, Tamil Nadu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="contact" class="bg-stone-800 text-stone-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <img src="Images/Madus_logo-removebg-preview.png"
+                            alt="Logo" class="h-8 mr-3">
+                    <h1 class="font-[''] text-3xl text-primary">Loomscape</h1>
+                    <p class="text-stone-400 mb-6 leading-relaxed">
+                        Connecting souls to the timeless art of Tamil handloom weaving in the cultural heart of Madurai.
+                        Where tradition meets transformation.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-stone-700 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="ri-facebook-fill text-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-stone-700 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="ri-instagram-line text-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-stone-700 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="ri-youtube-line text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-stone-100 mb-4">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-primary transition-colors duration-300">Home</a></li>
+                         <li><a href="Booking.html"
+                                class="hover:text-primary transition-colors duration-300">Booking</a></li>
+                        <li><a href="#about" class="hover:text-primary transition-colors duration-300">About</a></li>
+                        <li><a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a>
+                        </li>
+                         <li><a href="signin.html"
+                                class="hover:text-primary transition-colors duration-300">Signin</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-stone-100 mb-4">Visit Us</h5>
+                    <div class="space-y-2">
+                        <p class="text-sm">Traditional Weaving Quarter</p>
+                        <p class="text-sm">Near Meenakshi Temple</p>
+                        <p class="text-sm">Madurai, Tamil Nadu 625001</p>
+                        <p class="text-sm">India</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-stone-700 mt-12 pt-8 text-center">
+                <p class="text-stone-400 text-sm">
+                    © 2024 Loomscape. All rights reserved. | Threads of Tradition, Woven in Madurai
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script id="navigation-mobile">
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.querySelector('button[class*="md:hidden"]');
+            const nav = document.querySelector('nav');
+            if (menuButton && nav) {
+                menuButton.addEventListener('click', function () {
+                    nav.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+    <script id="smooth-scroll">
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    <script id="gallery-interactions">
+        document.addEventListener('DOMContentLoaded', function () {
+            const galleryItems = document.querySelectorAll('.masonry-item');
+            galleryItems.forEach(item => {
+                item.addEventListener('mouseenter', function () {
+                    this.style.transform = 'scale(1.02)';
+                });
+                item.addEventListener('mouseleave', function () {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+  	<!-- body code goes here -->
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-3.4.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/popper.min.js"></script> 
+	<script src="js/bootstrap-4.4.1.js"></script>
+  </body>
+</html>
