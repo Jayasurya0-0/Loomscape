@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Loomscape | Get in Touch with Madurai's Weavers</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D2691E',
+                        secondary: '#8B4513'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        .contact-bg {
+            background-image: url('https://readdy.ai/api/search-image?query=Hands-on%20textile%20workshop%20with%20participants%20learning%20traditional%20weaving%20techniques%2C%20colorful%20cotton%20threads%2C%20wooden%20looms%2C%20collaborative%20learning%20environment%2C%20cultural%20exchange%2C%20warm%20natural%20lighting%2C%20artisan%20guidance&width=400&height=300&seq=workshop-1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cotton-texture {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><defs><pattern id="cotton" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23f5f5dc" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23cotton)"/></svg>');
+        }
+    </style>
+</head>
+
+<body class="font-['Crimson_Text'] bg-stone-50">
+     <header class="bg-stone-100 shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+					 <img src="Images/Madus_logo-removebg-preview.png"
+                            alt="Logo" class="h-8 mr-3">
+                    <h1 class="font-[''] text-3xl text-primary">Loomscape</h1>
+                    
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html"
+                        class="text-stone-700 hover:text-primary transition-colors duration-300 font-medium">Home</a>
+                        <a href="Booking.html"
+                        class="text-stone-700 hover:text-primary transition-colors duration-300 font-medium">Booking</a>
+                    <a href="About.html"
+                        class="text-stone-700 hover:text-primary transition-colors duration-300 font-medium">About</a>
+                    <a href="Contact.html"
+                        class="text-stone-700 hover:text-primary transition-colors duration-300 font-medium">Contact</a>
+                          <a href="signin.html"
+                        class="text-stone-700 hover:text-primary transition-colors duration-300 font-medium">Signin</a>
+                </nav>
+                <button class="md:hidden w-8 h-8 flex items-center justify-center">
+                    <i class="ri-menu-line text-xl text-stone-700"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="contact-bg min-h-[40vh] flex items-center relative">
+        <div class="absolute inset-0 bg-stone-900/40"></div>
+        <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h1 class="font-['Playfair_Display'] text-5xl md:text-6xl font-bold mb-4">
+                Connect with the Weavers
+            </h1>
+            <p class="text-xl max-w-2xl mx-auto">
+                We'd love to hear from you—whether it's about a booking, partnership, or general inquiry about Madurai's heritage.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-1 space-y-8 p-8 bg-stone-50 cotton-texture rounded-lg shadow-lg">
+                    <h2 class="font-['Playfair_Display'] text-3xl font-bold text-stone-800 border-b pb-3 border-primary/30">
+                        Our Details
+                    </h2>
+
+                    <div class="flex items-start space-x-4">
+                        <i class="ri-map-pin-line text-3xl text-primary mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-stone-800">Address</p>
+                            <p class="text-stone-600">Traditional Weaving Quarter, Near Meenakshi Temple, Madurai, Tamil Nadu 625001, India</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <i class="ri-phone-line text-3xl text-primary mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-stone-800">Phone</p>
+                            <p class="text-stone-600">+91 98765 43210</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <i class="ri-mail-line text-3xl text-primary mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-stone-800">Email</p>
+                            <p class="text-stone-600">hello@loomscape.in</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-4">
+                         <h4 class="font-['Playfair_Display'] text-xl font-semibold text-stone-800 mb-3">Follow Our Thread</h4>
+                         <div class="flex space-x-4">
+                            <a href="#"
+                                class="w-10 h-10 bg-stone-200 hover:bg-primary text-stone-800 hover:text-white rounded-full flex items-center justify-center transition-colors duration-300">
+                                <i class="ri-facebook-fill text-lg"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 bg-stone-200 hover:bg-primary text-stone-800 hover:text-white rounded-full flex items-center justify-center transition-colors duration-300">
+                                <i class="ri-instagram-line text-lg"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 bg-stone-200 hover:bg-primary text-stone-800 hover:text-white rounded-full flex items-center justify-center transition-colors duration-300">
+                                <i class="ri-youtube-line text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="lg:col-span-2 p-8 bg-white rounded-lg shadow-2xl">
+                    <h2 class="font-['Playfair_Display'] text-3xl font-bold text-stone-800 mb-6">Send Us a Message</h2>
+                    <form action="index.html" method="GET" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-stone-700 mb-2">Full Name</label>
+                            <input type="text" name="name" id="name" required
+                                class="w-full px-4 py-3 border border-stone-300 rounded-button focus:ring-primary focus:border-primary transition duration-150">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-stone-700 mb-2">Email Address</label>
+                            <input type="email" name="email" id="email" required
+                                class="w-full px-4 py-3 border border-stone-300 rounded-button focus:ring-primary focus:border-primary transition duration-150">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-stone-700 mb-2">Subject</label>
+                            <select name="subject" id="subject"
+                                class="w-full px-4 py-3 border border-stone-300 rounded-button focus:ring-primary focus:border-primary transition duration-150">
+                                <option>General Inquiry</option>
+                                <option>Booking/Workshop Question</option>
+                                <option>Partnership Opportunity</option>
+                                <option>Media/Press</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-stone-700 mb-2">Your Message</label>
+                            <textarea name="message" id="message" rows="5" required
+                                class="w-full px-4 py-3 border border-stone-300 rounded-button focus:ring-primary focus:border-primary transition duration-150"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-primary hover:bg-secondary text-white px-8 py-4 !rounded-button font-medium text-lg transition-all duration-300 transform hover:scale-105 w-full sm:w-auto">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer-contact" class="bg-stone-800 text-stone-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <img src="Images/Madus_logo-removebg-preview.png" alt="Logo" class="h-8 mr-3">
+                    <h1 class="font-[''] text-3xl text-primary">Loomscape</h1>
+                    <p class="text-stone-400 mb-6 leading-relaxed">
+                        Connecting souls to the timeless art of Tamil handloom weaving in the cultural heart of Madurai.
+                        Where tradition meets transformation.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-stone-700 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="ri-facebook-fill text-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-stone-700 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="ri-instagram-line text-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-stone-700 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="ri-youtube-line text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-stone-100 mb-4">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-primary transition-colors duration-300">Home</a></li>
+                        <li><a href="Booking.html" class="hover:text-primary transition-colors duration-300">Booking</a></li>
+                        <li><a href="About.html" class="hover:text-primary transition-colors duration-300">About</a></li>
+                        <li><a href="Contact.html" class="hover:text-primary transition-colors duration-300">Contact</a>
+                        </li>
+                        <li><a href="signin.html" class="hover:text-primary transition-colors duration-300">Signin</a></li>
+                        <li><a href="Terms & Condition.html" class="hover:text-primary transition-colors duration-300">Terms & Conditions</a></li>
+                        <li><a href="Privacy Policy.html" class="hover:text-primary transition-colors duration-300">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-stone-100 mb-4">Visit Us</h5>
+                    <div class="space-y-2">
+                        <p class="text-sm">Traditional Weaving Quarter</p>
+                        <p class="text-sm">Near Meenakshi Temple</p>
+                        <p class="text-sm">Madurai, Tamil Nadu 625001</p>
+                        <p class="text-sm">India</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-stone-700 mt-12 pt-8 text-center">
+                <p class="text-stone-400 text-sm">
+                    © 2024 Loomscape. All rights reserved. | Threads of Tradition, Woven in Madurai
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script id="navigation-mobile">
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.querySelector('button[class*="md:hidden"]');
+            const nav = document.querySelector('nav');
+            if (menuButton && nav) {
+                menuButton.addEventListener('click', function () {
+                    nav.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
